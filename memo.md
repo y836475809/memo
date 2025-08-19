@@ -103,8 +103,20 @@ sudo docker run -d -t \
 ```
 
 ## windows
-- open browser
+- open url
 http://localhost:10000/builder/admin
 
-## url
+## tutorials
 https://budibase.com/blog/tutorials/employee-management-app/
+
+
+# SQL Server docker(未確認)
+- [【SQL Server 2019】 Developer と Express の違い](https://qiita.com/Sanada-code/items/fb19e98f9201bf1d8e1f)
+  - Express: 機能制限あり、本番環境もふくめて自由に使用可能
+  - Developer：全機能使用可能、テスト用としてのみライセンスを認める
+- [Docker で SQL Server を実行する(Expressエディション)](https://www.curict.com/item/99/99ff31e.html)
+- [クイック スタート:Docker を使用して SQL Server Linux コンテナー イメージを実行する](https://learn.microsoft.com/ja-jp/sql/linux/quickstart-install-connect-docker?view=sql-server-ver17&tabs=cli&pivots=cs1-bash)
+- [SQL Server 2022をDockerコンテナで動かす](https://qiita.com/charon/items/6a7cae83b0d2aea6258e)
+- [Docker で Microsoft SQL Server を実行するときのメモ](https://zenn.dev/shimiyu/scraps/e4b93ef1c47a08)
+  - docker-compose.yamlでMSSQL_PID=ExpressでExpress Editionを指定
+- [DockerでSQLServerを起動してデータベースをリストアするまでの記録](https://twinbird-htn.hatenablog.com/entry/2025/01/11/043000)
