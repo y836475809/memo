@@ -120,3 +120,17 @@ https://budibase.com/blog/tutorials/employee-management-app/
 - [Docker で Microsoft SQL Server を実行するときのメモ](https://zenn.dev/shimiyu/scraps/e4b93ef1c47a08)
   - docker-compose.yamlでMSSQL_PID=ExpressでExpress Editionを指定
 - [DockerでSQLServerを起動してデータベースをリストアするまでの記録](https://twinbird-htn.hatenablog.com/entry/2025/01/11/043000)
+
+
+# virtualbox
+- https://tanoike.com/virtualbox-shared-folder-linux
+
+# go
+- https://qiita.com/TakanoriVega/items/6d7210147c289b45298a
+- https://qiita.com/enoenoeno11/items/c24516ebe42606e601b7
+- sample2
+  - https://qiita.com/hichihara/items/176d4c15bd240d7f2b0d
+```
+$ gcc -c hello.c
+$ ar rusv libhello.a hello.o
+```
