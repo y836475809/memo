@@ -134,3 +134,6 @@ https://budibase.com/blog/tutorials/employee-management-app/
 $ gcc -c hello.c
 $ ar rusv libhello.a hello.o
 ```
+- test
+  - https://zenn.dev/geniee/articles/207821e953a900
+  - https://qiita.com/theoden9014/items/ac8763381758148e8ce5
