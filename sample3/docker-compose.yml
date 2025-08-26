@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    container_name: sqlserver2022_Express
+    hostname: sqlserver2022_Express
+    ports:
+      - "1433:1433"
+    user: root
+    # network_mode: bridge
+    networks:
+        - default
+    image: mcr.microsoft.com/mssql/server:2022-latest
+
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=<pass>
+      - MSSQL_PID=Express
+      - MSSQL_LCID=1041
+      - MSSQL_COLLATION=Japanese_CI_AS
+    volumes:
+      - ./data:/var/opt/mssql
+

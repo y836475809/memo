@@ -141,3 +141,9 @@ $ ar rusv libhello.a hello.o
   - https://gin-gonic.com/ja/docs/testing/
   - https://qiita.com/torat3158/items/7b38bc17c2d1129119f9
   - https://dev.to/truongpx396/golang-integration-test-with-gin-gorm-testify-postgresql-1e8m
+
+# sample3 sql server(docker)
+- https://learn.microsoft.com/ja-jp/sql/linux/quickstart-install-connect-docker?view=sql-server-ver17&tabs=cli&pivots=cs1-bash#remove-your-container
+- https://github.com/microsoft/mssql-docker/issues/13#issuecomment-641904197
+- https://blog.hn-pgtech.com/2023-02-06/
+- https://docs.docker.com/engine/storage/drivers/overlayfs-driver/#configure-docker-with-the-overlay-or-overlay2-storage-driver
