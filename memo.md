@@ -147,3 +147,13 @@ $ ar rusv libhello.a hello.o
 - https://github.com/microsoft/mssql-docker/issues/13#issuecomment-641904197
 - https://blog.hn-pgtech.com/2023-02-06/
 - https://docs.docker.com/engine/storage/drivers/overlayfs-driver/#configure-docker-with-the-overlay-or-overlay2-storage-driver
+
+- virtualboxのubuntuにdockerのsql server
+  - 共有フォルダだとエラーでdocker起動できない(ホームの適当なフォルダにしたら起動できた)
+  - vbのポートフォワーディング設定(https://qiita.com/nacanaca/items/34b8a7c4d01dab993e4a)
+  - 
+- windows(ホスト)にMicrosoft SQL Server Management Studioインストール, vbのdockerのsql serverに接続
+  - 「ログイン」のサーバ名はlocalhost,1433
+  - 「追加の接続パラメータ」にTrustServerCertificate=Trueを追加
+  - https://zenn.dev/nagiyu/articles/68f005eda86218
+  - https://ippun-blog.com/dockeronsqlserverkaisetsu/

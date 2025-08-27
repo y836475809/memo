@@ -7,8 +7,8 @@ services:
       - "1433:1433"
     user: root
     # network_mode: bridge
-    networks:
-        - default
+    # networks:
+    #     - default
     image: mcr.microsoft.com/mssql/server:2022-latest
 
     environment:
@@ -17,6 +17,10 @@ services:
       - MSSQL_PID=Express
       - MSSQL_LCID=1041
       - MSSQL_COLLATION=Japanese_CI_AS
+    # volumes:
+    #   - ./data:/var/opt/mssql/data
+    #   - ./log:/var/opt/mssql/log
+    #   - ./secrets:/var/opt/mssql/secrets
     volumes:
-      - ./data:/var/opt/mssql
+      - ./data:/var/opt/mssql/data
 
