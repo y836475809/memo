@@ -150,10 +150,20 @@ $ ar rusv libhello.a hello.o
 
 - virtualboxのubuntuにdockerのsql server
   - 共有フォルダだとエラーでdocker起動できない(ホームの適当なフォルダにしたら起動できた)
-  - vbのポートフォワーディング設定(https://qiita.com/nacanaca/items/34b8a7c4d01dab993e4a)
-  - 
+  - vbのポートフォワーディング設定(https://qiita.com/nacanaca/items/34b8a7c4d01dab993e4a) 
 - windows(ホスト)にMicrosoft SQL Server Management Studioインストール, vbのdockerのsql serverに接続
   - 「ログイン」のサーバ名はlocalhost,1433
   - 「追加の接続パラメータ」にTrustServerCertificate=Trueを追加
   - https://zenn.dev/nagiyu/articles/68f005eda86218
   - https://ippun-blog.com/dockeronsqlserverkaisetsu/
+
+# sample4 minio(docker)
+- virtualboxのubuntuにdockerのminio
+- image
+  - https://hub.docker.com/r/minio/minio
+  - sudo docker pull minio/minio:RELEASE.2025-07-23T15-54-02Z
+- vbのポートフォワーディング設定(https://qiita.com/nacanaca/items/34b8a7c4d01dab993e4a) 
+- compose
+  - https://blog.adglobe.co.jp/entry/2024/11/15/100000
+  - https://qiita.com/h_tyokinuhata/items/c2b76b39b99728d8246a
+  - webui http://127.0.0.1:9001
