@@ -167,3 +167,9 @@ $ ar rusv libhello.a hello.o
   - https://blog.adglobe.co.jp/entry/2024/11/15/100000
   - https://qiita.com/h_tyokinuhata/items/c2b76b39b99728d8246a
   - webui http://127.0.0.1:9001
+
+# sample5 ローカルモジュール参照(go.work)
+- https://zenn.dev/ikawaha/articles/20220701-a053ec54b77435
+- https://zenn.dev/jy8752/scraps/21b9d548cc9b09
+- https://go.dev/doc/tutorial/workspaces
+- https://qiita.com/h-masano/items/bf7bdfba7c4e8f6b28c4

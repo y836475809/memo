@@ -1,0 +1,13 @@
+go 1.25.0
+
+use (
+	./p1
+	./p2
+	./p3
+)
+
+// replace (
+// 	test/p1/sv1 => ./p1/sv
+// 	test/p2/sv2 => ./p2/sv
+// 	test/p3/sv3 => ./p3/sv
+// )
