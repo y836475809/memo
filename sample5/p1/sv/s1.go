@@ -7,10 +7,10 @@ type User struct {
 	Gender   string `json:"gender"`
 }
 
-func SetupRouter() *gin.Engine {
+func SetupRouter1() *gin.Engine {
 	router := gin.Default()
-	router.GET("/ping", func(c *gin.Context) {
-		c.String(200, "pong")
+	router.GET("/ping1", func(c *gin.Context) {
+		c.String(200, "pong1")
 	})
 	return router
 }

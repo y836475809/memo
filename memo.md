@@ -168,7 +168,11 @@ $ ar rusv libhello.a hello.o
   - https://qiita.com/h_tyokinuhata/items/c2b76b39b99728d8246a
   - webui http://127.0.0.1:9001
 
-# sample5 ローカルモジュール参照(go.work)
+# sample5 ローカルモジュール参照(go.work), http server test sample
+- [Go言語でパッケージの修飾名が重複した場合の対応方法](https://taknb2nch.hatenablog.com/entry/20140211/1392046399)
+- [Gin を使って複数のサービスを稼働させる](https://gin-gonic.com/ja/docs/examples/run-multiple-service/)
+- [HTTPサーバーは安全に終了](https://zenn.dev/tksx1227/articles/5ab5b3c99336c3)
+- [ローカルPCでGoでserverを立ち上げたときにファイアウォールを出なくさせる](https://ludwig125.hatenablog.com/entry/2020/06/10/064119)
 - https://zenn.dev/ikawaha/articles/20220701-a053ec54b77435
 - https://zenn.dev/jy8752/scraps/21b9d548cc9b09
 - https://go.dev/doc/tutorial/workspaces
