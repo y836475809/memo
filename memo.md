@@ -125,6 +125,37 @@ https://budibase.com/blog/tutorials/employee-management-app/
 # virtualbox
 - https://tanoike.com/virtualbox-shared-folder-linux
 
+# virtualbox docker
+## ubuntu
+https://docs.docker.com/engine/install/ubuntu/
+
+- remove old
+```
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+```
+
+- Add Docker's official GPG key
+```
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
+
+- Add the repository to Apt sources
+```
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+- install docker
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
 # go
 - https://qiita.com/TakanoriVega/items/6d7210147c289b45298a
 - https://qiita.com/enoenoeno11/items/c24516ebe42606e601b7
@@ -177,3 +208,7 @@ $ ar rusv libhello.a hello.o
 - https://zenn.dev/jy8752/scraps/21b9d548cc9b09
 - https://go.dev/doc/tutorial/workspaces
 - https://qiita.com/h-masano/items/bf7bdfba7c4e8f6b28c4
+
+# sample6 test 
+- http mock
+- https://github.com/h2non/gock
