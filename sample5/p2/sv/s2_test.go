@@ -6,7 +6,7 @@ import (
 )
 
 func TestCalc(t *testing.T) {
-	sv.SetupRouter()
+	sv.SetupRouter1()
 	SetupRouter2()
 	t.Error("test")
 }
