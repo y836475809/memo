@@ -116,3 +116,9 @@ http://localhost:10000/builder/admin
 
 # sample6 http get post test 
 - https://github.com/h2non/gock
+
+# sample7 cgo
+- https://qiita.com/endoh/items/4410309f5114cafc265e
+- https://qiita.com/saturday06/items/84535c61a3328c02032c
+- https://ericchiang.github.io/post/cgo/
+- https://hnakamur.github.io/blog/2019/12/29/cgo-and-unsafe/
