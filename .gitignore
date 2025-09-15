@@ -1,0 +1,9 @@
+.vscode
+.idea
+tmp/
+*.log
+*.lnk
+*.old
+*.bk
+*.bak
+

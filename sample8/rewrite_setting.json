@@ -1,0 +1,8 @@
+{
+    "${test1}": "v10.00",
+    "${test2}": "v2.01",
+
+    "target_files": [
+        "./compose.yml"
+    ]
+}
