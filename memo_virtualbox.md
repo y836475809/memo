@@ -122,3 +122,98 @@ http://localhost:10000/builder/admin
 - https://qiita.com/saturday06/items/84535c61a3328c02032c
 - https://ericchiang.github.io/post/cgo/
 - https://hnakamur.github.io/blog/2019/12/29/cgo-and-unsafe/
+
+# docker delve debug
+- sample9はdockerでdelveでのgoコードデバッグ
+- sample10はdockerでdelveでのgoコードとcgoのcコードデバッグ
+- 手順
+- 端末1
+  1. docker build, 起動(userはrootでcap_addでSYS_PTRACEの設定が必要)
+      ```
+      sudo docker compose build
+      sudo docker compose up
+      ```
+  1. dockerのプロセス名(NAMES)確認
+      ```
+      sudo docker ps
+      ```
+  1. dockerのshellに入る
+      ```
+      sudo docker exec -it {NAMES} /bin/bash
+      ```
+  1. アプリのプロセスid(PID)確認
+      ```
+      ps aux
+      ```
+  1. delveをPIDでアプリにアタッチさせる
+      ```
+      dlv attach {PID}
+      ```
+  1. アプリのソースファイルを確認
+      ```
+      (dlv) sources app
+      /app/calc.c
+      /app/calc.h
+      /app/main.go
+      ...
+      ```
+  1. goコードとcコードにブレークポイント設定(b {ファイル}:{行番号})
+      ```
+      (dlv) b /app/main.go:30
+      (dlv) b /app/calc.c:11
+      ```
+  1. continueでブレークポイントで止まるまで実行させる
+      ```
+      (dlv) continue
+      ```
+
+- 端末2
+  1. リクエストを投げる
+      ```
+      url http://localhost:8080
+      ```
+
+- 端末1
+  1. goコードのブレークポイントで止まる
+      ```
+      > [Breakpoint 1] main.main.func1() /app/main.go:30 (hits goroutine(21):1 total:1) (PC: 0x8e6a3f)
+          25:		// ルートエンドポイント
+          26:		router.GET("/", func(c *gin.Context) {
+          27:			n := 100
+          28:			s := "sss"
+          29:			log.Printf("%v, %v\n", n, s)
+      =>  30:			sum := C.data_sum((*C.person_t)(unsafe.Pointer(&plist[0])), C.size_t(len(plist)))
+          31:			c.JSON(200, gin.H{
+          32:				"message": fmt.Sprintf("Hello, World! sum=%v", sum),
+          33:			})
+          34:		})
+      ```
+  1. continueで次のブレークポイント(Cコード)で止まる
+  (dlv) continue
+      ```
+      > [Breakpoint 2] C.data_sum() /app/calc.c:10 (hits goroutine(21):1 total:1) (PC: 0x9df2f0)
+      5:	
+      6:	
+      7:	float data_sum(person_t* people, size_t size) {
+      8:		int sum = 0;
+      9:		for (int i = 0; i < size; i++) {
+      =>  10:	        int s = people[i].size;
+      11:			sum = sum + s;
+      12:		}
+      13:		return (float)sum;
+      14:	}
+      15:	
+      ```
+  1. localsやpコマンドで変数の値を表示させたりn,sでステップ実行できる
+  1. デバッグの終了
+      - quitコマンドでデタッチしてデバッグを抜ける
+      - Yでdockerごと終了する。nではデバッグから抜けるだけ
+      ```
+      (dlv) quit
+      Would you like to kill the process? [Y/n] 
+      ```
+
+- https://ryuichi1208.hateblo.jp/entry/2022/04/18/101252
+- https://qiita.com/propella/items/9d7b1dece283cf462cb9
+- https://qiita.com/minamijoyo/items/4da68467c1c5d94c8cd7
+- https://please-sleep.cou929.nu/debug-go-project-with-delve-on-docker.html
