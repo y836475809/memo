@@ -126,6 +126,8 @@ http://localhost:10000/builder/admin
 # docker delve debug
 - sample9はdockerでdelveでのgoコードデバッグ
 - sample10はdockerでdelveでのgoコードとcgoのcコードデバッグ
+  - デバッグの関数に__attribute__((optimize("O0")))をつけて最適化オフする。これがないとデバッグ時に変数がoptimized outになる
+  - Cのビルドで-g -o0と最適化オフにしてもoptimized outになったのでコードで直接指定している
 - 手順
 - 端末1
   1. docker build, 起動(userはrootでcap_addでSYS_PTRACEの設定が必要)
@@ -213,6 +215,7 @@ http://localhost:10000/builder/admin
       Would you like to kill the process? [Y/n] 
       ```
 
+- https://hatappi.blog/entry/2020/05/28/225510
 - https://ryuichi1208.hateblo.jp/entry/2022/04/18/101252
 - https://qiita.com/propella/items/9d7b1dece283cf462cb9
 - https://qiita.com/minamijoyo/items/4da68467c1c5d94c8cd7

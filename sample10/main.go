@@ -13,6 +13,8 @@ import (
 )
 
 func main() {
+	//$ gcc -shared -fPIC -o libcalc.so calc.c
+	//$ go run main.go
 	router := gin.Default()
 
 	plist := []C.person_t{
