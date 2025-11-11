@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "go",
+			"label": "go: build package",
+			"command": "build",
+			"args": [
+				"-gcflags",
+				"-N -l",
+				"${fileDirname}"
+			],
+			"problemMatcher": [
+				"$go"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "cd ${workspaceFolder}; go build -gcflags=all=\"-N -l\" ${fileDirname}"
+		},
+		{
+			"type": "go",
+			"label": "go: build unit test",
+			"command": "test",
+			"args": [
+				"-c",
+				"-gcflags",
+				"-N -l",
+				// "-o",
+				// "${fileDirname}"
+			],
+			"problemMatcher": [
+				"$go"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "cd ${workspaceFolder}; go test ${fileDirname}"
+		}
+	]
+}

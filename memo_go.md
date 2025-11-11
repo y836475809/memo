@@ -7,29 +7,19 @@
 
 ```
 $ gcc -g -shared -fPIC -o libcalc.dll calc.c
-$ objcopy --only-keep-debug libcalc.dll libcalc.dll.debug
 ```
 
 ```
-$ go build 
+$ go build -gcflags=all="-N -l"
 $ gdb ./debug_dll.exe 
-(gdb) add-symbol-file ./libcalc.dll.debug
-```
+(gdb) start
+(gdb) info sources calc
+(gdb) b calc.c:12
+(gdb) c
+Continuing.
 
-- set breakpoint -> strat -> stop -> c
-  - Cannot insert breakpoint Cannot access memory at address
-```
-(gdb) info sources calc
-(gdb) b ~calc.c:12
-(gdb) start
-(gdb) c
-```
-- strat -> stop -> set breakpoint -> c
-```
-(gdb) start
-(gdb) info sources calc
-(gdb) b ~calc.c:12
-(gdb) c
+Thread 1 hit Breakpoint 2, data_sum (people=0xc0000a6040, size=4) at calc.c:12
+12                      sum = sum + s;
 ```
 
 - https://zenn.dev/saitoyutaka/articles/dbd8076aeca09a
