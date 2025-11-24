@@ -8,11 +8,16 @@
             "name": "(gdb) 起動",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/debug_dll.exe",
+            "program": "${fileDirname}/${fileDirnameBasename}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
-            "environment": [],
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "${env:PATH};${fileDirname}/lib"
+                }
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "gdb.exe",
@@ -34,11 +39,16 @@
             "name": "unit test (gdb) 起動",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/debug_dll.test.exe",
+            "program": "${fileDirname}/${fileDirnameBasename}.test.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
-            "environment": [],
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "${env:PATH};${fileDirname}/lib"
+                }
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "gdb.exe",
@@ -64,6 +74,9 @@
             "buildFlags": [
                 "-gcflags=all=-N -l"
             ],
+            "env": {
+                "PATH": "${env:PATH};${fileDirname}/lib"
+            },
             "program": "${fileDirname}"
         }
     ]

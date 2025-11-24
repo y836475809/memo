@@ -3,14 +3,9 @@ package main
 // #cgo LDFLAGS: -L./lib -lcalc
 // #include <calc.h>
 import "C"
-import (
-	"fmt"
-	"unsafe"
-)
+import "unsafe"
 
-func main() {
-	// mingw
-	//$ gcc -g -shared -fPIC -o libcalc.dll calc.c
+func calcSum() float64 {
 	plist := []C.person_t{
 		{id: 1, size: 10},
 		{id: 2, size: 20},
@@ -18,5 +13,5 @@ func main() {
 		{id: 4, size: 40},
 	}
 	sum := C.data_sum((*C.person_t)(unsafe.Pointer(&plist[0])), C.size_t(len(plist)))
-	fmt.Printf("%v", sum)
+	return float64(sum)
 }

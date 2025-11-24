@@ -1,3 +1,3 @@
-module test/debug_dll
+module test/sample11
 
 go 1.25.0

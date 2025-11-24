@@ -1,0 +1,10 @@
+{
+    "go.testTimeout": "600s",
+    "go.testFlags": ["-v"],
+    "go.testEnvVars": {
+        "PATH": "${env:PATH};${workspaceFolder}/lib"
+    },
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH};${workspaceFolder}/lib"
+    }
+}

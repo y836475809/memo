@@ -6,10 +6,10 @@
 			"label": "go: build package",
 			"command": "build",
 			"args": [
-				"-gcflags",
-				"-N -l",
-				"${fileDirname}"
-			],
+                "-gcflags=all=-N -l",
+                "-o",
+                "${fileDirname}"
+            ],
 			"problemMatcher": [
 				"$go"
 			],
@@ -17,7 +17,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"detail": "cd ${workspaceFolder}; go build -gcflags=all=\"-N -l\" ${fileDirname}"
+			"detail": "go build -gcflags=all=-N -l -o ${fileDirname}"
 		},
 		{
 			"type": "go",
@@ -25,11 +25,10 @@
 			"command": "test",
 			"args": [
 				"-c",
-				"-gcflags",
-				"-N -l",
-				// "-o",
-				// "${fileDirname}"
-			],
+                "-gcflags=all=-N -l",
+                "-o",
+                "${fileDirname}"
+            ],
 			"problemMatcher": [
 				"$go"
 			],
@@ -37,7 +36,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"detail": "cd ${workspaceFolder}; go test ${fileDirname}"
+			"detail": "go test -gcflags=all=-N -l -o ${fileDirname}"
 		}
 	]
 }
