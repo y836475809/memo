@@ -7,3 +7,7 @@
 - https://zenn.dev/hsaki/articles/go-iterator-usage-deepdive
 - https://zenn.dev/ajapa/articles/0232dddfc160e4
 - https://zenn.dev/nobonobo/articles/1d4afb9f4e8873
+
+# sample12 gorm sql server
+- ローカルsql serverでgrom
+- データベース存在確認、データベース作成、テーブル作成
